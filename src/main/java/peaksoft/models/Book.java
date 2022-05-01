@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 @Entity
 @Table(name="books")
 @Getter@Setter
+@ToString
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +18,9 @@ public class Book {
     private String name;
     private String author;
     private BigDecimal price;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @ToString.Exclude
+    private Vendor vendor;
 
     public Book() {
     }

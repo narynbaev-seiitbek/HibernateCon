@@ -18,24 +18,30 @@ public class App {
         BookRepository bookRepository = new BookRepository();
         VendorRepository vendorRepository = new VendorRepository();
 
-//        Book book = new Book("Ak Keme", "Chyngyz Aitmatov", BigDecimal.valueOf(1000));
-//        Book book2 = new Book("Jamilya","Chyngyz Aitmatov", BigDecimal.valueOf(1500));
-//        Book book3 = new Book("Nasaat","Abdyshukur Nurmatov", BigDecimal.valueOf(2000));
-//        Book book4 = new Book("Becoming","Mishel Obama", BigDecimal.valueOf(2500));
-        Book book5 = new Book("Apple","Steve Jobs", BigDecimal.valueOf(2500));
+        //Book newBook = new Book("Ak keme", "Chyngyz Aitmatov", BigDecimal.valueOf(1500));
 
-        //Vendor vendor2 = new Vendor("Seitbek","seit@mail.ru");
-        //Vendor vendor = vendorRepository.findById(4L);
-        bookRepository.deleteById(6L);
-       // vendorRepository.save(vendor2);
+//        Vendor seit = new Vendor("Seit","seit@gmail.com");
+//        Book book = new Book("Apple", "Steve Book", BigDecimal.valueOf(2500));
+//        bookRepository.save(book);
 
-//        Vendor vendor1 = new Vendor("Azat","azat@mail.ru");
-//        vendor1.setBooks(List.of(book3,book4));
-//        vendorRepository.save(vendor1);
-//
-        //bookRepository.save(book);
 
-        //bookRepository.findAll().forEach(System.out::println);
+
+//        seit.addBook(book);
+//        book.setVendor(seit);
+//        vendorRepository.save(seit);
+//        Vendor vendor = vendorRepository.findById(1L);
+//        Book book2 = bookRepository.findById(5L);
+//        vendor.addBook(book2);
+//        book2.setVendor(vendor);
+//        vendorRepository.merge(vendor);
+//        System.out.println(vendor);
+       // bookRepository.deleteById(1L);
+
+
+
+        bookRepository.deleteById(5L);
+
+
 
         bookRepository.close();
         vendorRepository.close();

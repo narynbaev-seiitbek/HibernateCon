@@ -9,6 +9,7 @@ import lombok.ToString;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static jakarta.persistence.CascadeType.*;
@@ -24,19 +25,21 @@ public class Vendor {
     private Long id;
     private String name;
     private String email;
-    @OneToMany(cascade = {PERSIST,MERGE},fetch = FetchType.EAGER)
-    private List<Book> books;
+    @OneToMany(cascade = {CascadeType.PERSIST,MERGE}, mappedBy = "vendor", fetch = FetchType.EAGER)
+    private List<Book> books = new ArrayList<>();
+
 
     public Vendor(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    public void setBook(Book newBook) {
-        this.books.add(newBook);
+    public void addBook(Book book) {
+        this.books.add(book);
     }
 
-    public void removeBookById(Long id) {
-        books.removeIf(book -> book.getId()==id);
+    public void remove(Long id) {
+        this.books.removeIf(book -> book.getId()==id);
     }
+
 }
